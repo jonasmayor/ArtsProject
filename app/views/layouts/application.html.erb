@@ -43,6 +43,12 @@
       <a href="#">Press</a>
       <a href="#">New hires</a>
       <a href="#">About</a>
+      <%= form_tag home_path, class: 'locale' do %>
+          <%= select_tag 'set_locale',
+                         options_for_select(LANGUAGES, I18n.locale.to_s),
+                         onchange: 'this.form.submit()' %>
+          <%= javascript_tag "$('.locale input').hide()" %>
+      <% end %>
     </nav>
   </div>
 </div>
@@ -54,7 +60,7 @@
           <%= image_tag 'logo1.png' %>
         </div>
       </div>
-      <div class="col-md-5">Welcom to aout shop</div>
+      <div class="col-md-5"><%= t(:welcome) %></div>
     </div>
   </header>
 </div>
@@ -87,46 +93,66 @@
         <div class="col-md-6">
           <h1>Information</h1>
           <ul>
-            <li>About us</li>
-            <li>Customer Service</li>
-            <li>Privacy Policy</li>
-            <li>Site Map</li>
+            <li><a>About us</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Site Map</a></li>
           </ul>
         </div>
         <div class="col-md-6">
           <h1>Information</h1>
           <ul>
-            <li>About us</li>
-            <li>Customer Service</li>
-            <li>Privacy Policy</li>
-            <li>Site Map</li>
+            <li><a>About us</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Site Map</a></li>
           </ul>
         </div>
       </div>
-      <div class="row"></div>
     </div>
     <div class="col-md-6">
       <div class="row">
         <div class="col-md-6">
           <h1>Information</h1>
           <ul>
-            <li>About us</li>
-            <li>Customer Service</li>
-            <li>Privacy Policy</li>
-            <li>Site Map</li>
+            <li><a>About us</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Site Map</a></li>
+          </ul>
+          <h1>Information</h1>
+          <ul>
+            <li><a>About us</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Site Map</a></li>
           </ul>
         </div>
         <div class="col-md-6">
           <h1>Information</h1>
           <ul>
-            <li>About us</li>
-            <li>Customer Service</li>
-            <li>Privacy Policy</li>
-            <li>Site Map</li>
+            <li><a>About us</a></li>
+            <li><a>Customer Service</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>Site Map</a></li>
           </ul>
+          <div class="contact-info">
+            <ul>
+              <li><a><i class="fa fa-phone"></i>(305) 678934</a></li>
+              <li><a><i class="fa fa-envelope-o"></i>contacto@allcubanarts.com</a></li>
+              <li><a><i class="fa fa-facebook-f"></i>allcubanarts</a></li>
+              <li><a><i class="fa fa-twitter"></i><i class="fa fa-instagram"></i>@allcubanarts</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="row"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <%= image_tag 'logo2.png' %>
+        <p><span>All rights reserved 2015</span><i class="fa fa-circle"></i> Designed by arcegraficos. branding</p>
+      </div>
     </div>
   </div>
 </footer>

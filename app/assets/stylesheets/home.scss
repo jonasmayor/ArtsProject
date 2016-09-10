@@ -4,12 +4,15 @@
 ul.links {
   padding: 0;
   list-style: none;
+  margin-bottom: 0;
   li {
     display: inline;
     a {
       padding-right: 30px;
+      font-size: .875rem;
+      color: $dark-gray-color;
       &.active {
-        font-size: 2em;
+        font-size: 2.8125rem;
       }
     }
   }
@@ -18,16 +21,16 @@ ul.links {
 main {
   flex: 1;
   section {
-    padding: 50px 0;
+    padding: 30px 0;
 
     &:not(:last-child) {
-      border-bottom: solid 1px black;
+      border-bottom: solid 1px $dark-gray-color;
     }
     .content-row {
       padding-top: 25px;
 
       &:not(:last-child) {
-        border-bottom: solid 1px black;
+        border-bottom: solid 1px $dark-gray-color;
         padding-bottom: 25px;
       }
 
@@ -50,5 +53,31 @@ main {
   background: image_url('car.jpg');
   &:not(:last-child) {
     margin-bottom: 30px;
+  }
+}
+article{
+  .title {
+    font-family: 'gillsans-semibold';
+    text-transform: uppercase;
+    padding: 15px 0 5px;
+  }
+  .price{
+    font-size: 1.125rem;
+    &.before{
+      text-decoration: line-through;
+      color: $orange-color;
+    }
+  }
+  sub{
+    font-family: gillsans-light;
+    text-transform: uppercase;
+    padding-left: 5px;
+  }
+  .action {
+    text-align: center;
+    margin-top: 15px;
+    img {
+      width: 25px;
+    }
   }
 }

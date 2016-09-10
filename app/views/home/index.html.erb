@@ -38,13 +38,12 @@
                           <article>
                             <%= image_tag 'articles.jpg' %>
                             <div class="title">La Mona Lisa</div>
-                            <div class="price">$50.00 usd</div>
-                            <div class="old-price">$72.00 usd</div>
+                            <div class="price">$50.00<sub class="usd">(usd)</sub></div>
+                            <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
                             <div class="action">
-                              <button>
-                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-<i class="fa fa-camera-retro fa-lg"></i>
-                              </button>
+                              <a href="#">
+                                <%= image_tag 'cart.png'   %>
+                              </a>
                             </div>
                           </article>
                         </div>

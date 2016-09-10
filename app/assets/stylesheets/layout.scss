@@ -9,6 +9,8 @@
     a {
       padding: 0 25px;
       color: $orange-color;
+      font-family: gillsans-light;
+      font-size: .875rem;;
       &:not(:last-child) {
         border-right: solid 1px;
       }
@@ -16,13 +18,19 @@
 
   }
 }
+
+html {
+  font-size: 16px;
+}
+
 body {
-  font-family: 'gouldyold-regular',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'gouldyold-bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
   color: $dark-gray-color;
   background-color: #fff;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -41,6 +49,9 @@ body {
       display: inline-block;
       width: 20%;
       color: white;
+      text-transform: uppercase;
+      padding-right: 20%;
+      font-size: 1.125rem;
     }
   }
   .allcuban-nav {
@@ -87,11 +98,61 @@ footer {
     padding: 0;
     margin: 40px 0;
     text-align: left;
+    text-transform: capitalize;
   }
+
   ul {
     text-align: left;
     list-style: none;
     padding: 0;
+    li {
+      a {
+        color: white;
+        font-family: gillsans-light;
+        line-height: 2rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .contact-info {
+    border: solid 1px;
+    padding: 25px 20px;
+    margin-top: 25px;
+    ul {
+      li {
+        a {
+          text-transform: none;
+          i {
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+  }
+  .copyright {
+    position: relative;
+    img {
+      width: 30%;
+      float: left;
+    }
+    p {
+      margin: 0;
+      font-family: gillsans-light;
+      font-size: .875rem;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 0;
+      right: 15px;
+      i {
+        margin: 0 8px;
+        font-size: .1rem;
+        vertical-align: middle;
+      }
+      span {
+        font-family: gillsans-semibold;
+      }
+    }
   }
 }
 

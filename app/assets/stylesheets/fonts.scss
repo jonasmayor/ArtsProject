@@ -13,9 +13,9 @@
   font-url('gillsans-semibold.ttf') format('truetype'),
   font-url('gillsans-semibold.woff') format('woff');
 }
-
+// NOT WORKING!!!!
 @font-face {
-  font-family: 'gillsans';
+  font-family: 'gillsans-regular';
   src: font-url('gillsans.ttf') format('truetype')
 }
 
