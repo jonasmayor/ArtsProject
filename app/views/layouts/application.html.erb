@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>AllCubanArts</title>
+
+  <!--   IE10 viewport hack for Surface/desktop Windows 8 bug
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+     Custom styles for this template
+    <link href="blog.css" rel="stylesheet">
+
+     Just for debugging purposes. Don't actually copy these 2 lines!
+    [if lt IE 9]<script src="../../assets/js/ie8-responsive-file-warning.js"></script>><![endif]
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    [if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="allcuban-masthead">
+  <div class="container">
+    <nav class="masthead-nav">
+      <a class="active" href="#">Home</a>
+      <a href="#">New features</a>
+      <a href="#">Press</a>
+      <a href="#">New hires</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+</div>
+<div class="container">
+  <header class="blog-header">
+    <div class="row">
+      <div class="col-md-6 nopadding">
+        <div class="logo">
+          <%= image_tag 'logo1.png' %>
+        </div>
+      </div>
+      <div class="col-md-5">Welcom to aout shop</div>
+    </div>
+  </header>
+</div>
+<div class="allcuban-main-nav">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="allcuban-nav left-nav">
+        <div class="left-column">
+          <nav class="main-nav">
+            <a class="active" href="#">Home</a>
+            <a href="#">Pieces</a>
+            <a href="#">Artist</a>
+            <a href="#">News&amp;Gallery</a>
+          </nav>
+        </div>
+      </div>
+      <div class="allcuban-nav right-nav">
+        <div class="right-column">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= yield %>
+<footer>
+  <div class="container nopadding nopadding-r">
+    <div class="col-md-6 nopadding">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Information</h1>
+          <ul>
+            <li>About us</li>
+            <li>Customer Service</li>
+            <li>Privacy Policy</li>
+            <li>Site Map</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h1>Information</h1>
+          <ul>
+            <li>About us</li>
+            <li>Customer Service</li>
+            <li>Privacy Policy</li>
+            <li>Site Map</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Information</h1>
+          <ul>
+            <li>About us</li>
+            <li>Customer Service</li>
+            <li>Privacy Policy</li>
+            <li>Site Map</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h1>Information</h1>
+          <ul>
+            <li>About us</li>
+            <li>Customer Service</li>
+            <li>Privacy Policy</li>
+            <li>Site Map</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+  </div>
+</footer>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>

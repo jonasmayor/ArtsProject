@@ -1,0 +1,110 @@
+@import "variables";
+
+.allcuban-masthead {
+  background-color: white;
+  nav {
+    float: right;
+    padding: 15px 0;
+    width: 582px;
+    a {
+      padding: 0 25px;
+      color: $orange-color;
+      &:not(:last-child) {
+        border-right: solid 1px;
+      }
+    }
+
+  }
+}
+body {
+  font-family: 'gouldyold-regular',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: $dark-gray-color;
+  background-color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+
+.logo {
+  img {
+    width: 50%;
+    margin-bottom: 25px;
+  }
+}
+
+.allcuban-main-nav {
+
+  nav {
+    a {
+      display: inline-block;
+      width: 20%;
+      color: white;
+    }
+  }
+  .allcuban-nav {
+    padding: 15px 0
+  }
+  .left-nav {
+    background: $dark-gray-color;
+    float: left;
+    width: 64%;
+  }
+  .right-nav {
+    border-left: solid 5px white;
+    background-color: $light-gray-color;
+    float: right;
+    width: 35%;
+  }
+}
+
+.left-column {
+  float: left;
+  margin-left: 7.7%;
+}
+
+.right-column {
+  float: left;
+  width: 85%;
+}
+
+.nopadding {
+  padding-left: 0 ! important;
+}
+
+.nopadding-r {
+  padding-right: 0 ! important;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  background-color: $orange-color;
+  padding-bottom: 40px;
+  margin-top: 60px;
+  h1 {
+    padding: 0;
+    margin: 40px 0;
+    text-align: left;
+  }
+  ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+  }
+}
+
+body {
+
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+

@@ -1,0 +1,54 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul.links {
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline;
+    a {
+      padding-right: 30px;
+      &.active {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+main {
+  flex: 1;
+  section {
+    padding: 50px 0;
+
+    &:not(:last-child) {
+      border-bottom: solid 1px black;
+    }
+    .content-row {
+      padding-top: 25px;
+
+      &:not(:last-child) {
+        border-bottom: solid 1px black;
+        padding-bottom: 25px;
+      }
+
+    }
+
+  }
+}
+
+.big-image {
+  width: 100%;
+  height: 460px;
+  border: solid 1px;
+  background: image_url('car.jpg');
+}
+
+.small-image {
+  width: 70%;
+  height: 215px;
+  border: solid 1px;
+  background: image_url('car.jpg');
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
