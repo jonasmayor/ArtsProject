@@ -14,6 +14,11 @@ ul.links {
       &.active {
         font-size: 2.8125rem;
       }
+      &:hover,
+      &:focus {
+        color: $orange-color;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -39,36 +44,58 @@ main {
   }
 }
 
-.big-image {
-  width: 100%;
-  height: 460px;
+.img {
   border: solid 1px;
-  background: image_url('car.jpg');
-}
+  overflow: hidden;
+  position: relative;
 
-.small-image {
-  width: 70%;
-  height: 215px;
-  border: solid 1px;
-  background: image_url('car.jpg');
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  &.big {
+    width: 100%;
+    height: 460px;
+  }
+
+  &.small {
+    width: 70%;
+    height: 215px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-family: 'gouldyold-bold', serif;
+    font-weight: bold;
+    padding: 15px;
+    background: linear-gradient(transparent, black);
+    width: 100%;
+    .title {
+      font-size: 1.8rem;
+    }
+    .author {
+      font-size: 1.2rem;
+      font-family: gillsans-semibold;
+    }
   }
 }
-article{
+
+article {
   .title {
-    font-family: 'gillsans-semibold';
+    font-family: 'gillsans-semibold', serif;
     text-transform: uppercase;
     padding: 15px 0 5px;
   }
-  .price{
+  .price {
     font-size: 1.125rem;
-    &.before{
+    &.before {
       text-decoration: line-through;
       color: $orange-color;
     }
   }
-  sub{
+  sub {
     font-family: gillsans-light;
     text-transform: uppercase;
     padding-left: 5px;

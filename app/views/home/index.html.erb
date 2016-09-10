@@ -1,6 +1,6 @@
 <main>
   <div class="container">
-    <section class="row">
+    <section class="row main-section">
       <header>
         <ul class="links">
           <li><a class="active" href="">Colecciones</a></li>
@@ -11,48 +11,128 @@
       </header>
       <div class="content col-md-10 nopadding">
         <div class="col-md-7 nopadding">
-          <div class="big-image"> </div>
+          <div class=" img big">
+            <%= image_tag 'image1.jpg', class: 'img-responsive' %>
+            <div class="data">
+              <div class="author">Paul Shuskin</div>
+              <div class="title">The Old Forest</div>
+            </div>
+          </div>
         </div>
         <div class="col-md-5">
-          <div class="small-image"></div>
-          <div class="small-image"></div>
+          <div class="img small">
+            <%= image_tag 'image2.jpg', class: 'img-responsive' %>
+            <div class="data">
+              <div class="author">Paul Shuskin</div>
+              <div class="title">The Old Forest</div>
+            </div>
+          </div>
+          <div class="img small">
+            <%= image_tag 'image3.jpg', class: 'img-responsive' %>
+            <div class="data">
+              <div class="author">Paul Shuskin</div>
+              <div class="title">The Old Forest</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <% 4.times do %>
-        <section class="row">
-          <header>
-            <ul class="links">
-              <li><a class="active" href="">Colecciones</a></li>
-              <li><a href="">Nuevos Productos</a></li>
-              <li><a href="">Artistas mas vendidos</a></li>
-              <li><a href="">Especiales</a></li>
-            </ul>
-          </header>
-          <div class="content col-md-10 nopadding">
-            <% 2.times do %>
-                <div class="content-row">
-                  <div class="row">
-                    <% 6.times do %>
-                        <div class="col-md-2">
-                          <article>
-                            <%= image_tag 'articles.jpg' %>
-                            <div class="title">La Mona Lisa</div>
-                            <div class="price">$50.00<sub class="usd">(usd)</sub></div>
-                            <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
-                            <div class="action">
-                              <a href="#">
-                                <%= image_tag 'cart.png'   %>
-                              </a>
-                            </div>
-                          </article>
+    <section class="row thumbnail-section">
+      <header>
+        <ul class="links">
+          <li><a class="active" href="">Nuevos Productos</a></li>
+          <li><a href="">Artistas mas vendidos</a></li>
+          <li><a href="">Especiales</a></li>
+          <li><a href="">Colecciones</a></li>
+        </ul>
+      </header>
+      <div class="content col-md-10 nopadding">
+        <% 2.times do %>
+            <div class="content-row">
+              <div class="row">
+                <% 6.times do %>
+                    <div class="col-md-2">
+                      <article>
+                        <%= image_tag 'articles.jpg' %>
+                        <div class="title">La Mona Lisa</div>
+                        <div class="price">$50.00<sub class="usd">(usd)</sub></div>
+                        <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
+                        <div class="action">
+                          <a href="#">
+                            <%= image_tag 'cart.png' %>
+                          </a>
                         </div>
-                    <% end %>
-                  </div>
+                      </article>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </section>
+    <section class="row special-section">
+      <header>
+        <ul class="links">
+          <li><a class="active" href="">Artistas mas vendidos</a></li>
+          <li><a href="">Especiales</a></li>
+          <li><a href="">Colecciones</a></li>
+          <li><a href="">Nuevos Productos</a></li>
+        </ul>
+      </header>
+      <div class="content col-md-10 nopadding">
+
+        <div class="content-row">
+          <div class="row">
+            <% 3.times do %>
+                <div class="col-md-4">
+                  <article>
+                    <%= image_tag 'articles.jpg' %>
+                    <div class="title">La Mona Lisa</div>
+                    <div class="price">$50.00<sub class="usd">(usd)</sub></div>
+                    <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
+                    <div class="action">
+                      <a href="#">
+                        <%= image_tag 'cart.png' %>
+                      </a>
+                    </div>
+                  </article>
                 </div>
             <% end %>
           </div>
-        </section>
-    <% end %>
+        </div>
+
+      </div>
+    </section>
+    <section class="row thumbnail-section">
+      <header>
+        <ul class="links">
+          <li><a class="active" href="">Especiales</a></li>
+          <li><a href="">Colecciones</a></li>
+          <li><a href="">Nuevos Productos</a></li>
+          <li><a href="">Artistas mas vendidos</a></li>
+        </ul>
+      </header>
+      <div class="content col-md-10 nopadding">
+        <div class="content-row">
+          <div class="row">
+            <% 6.times do %>
+                <div class="col-md-2">
+                  <article>
+                    <%= image_tag 'articles.jpg' %>
+                    <div class="title">La Mona Lisa</div>
+                    <div class="price">$50.00<sub class="usd">(usd)</sub></div>
+                    <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
+                    <div class="action">
+                      <a href="#">
+                        <%= image_tag 'cart.png' %>
+                      </a>
+                    </div>
+                  </article>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </main>

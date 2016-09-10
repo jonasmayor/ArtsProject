@@ -4,22 +4,36 @@
   background-color: white;
   nav {
     float: right;
-    padding: 15px 0;
-
-    a {
-      padding: 0 25px;
-      color: $orange-color;
-      font-family: gillsans-light;
-      font-size: .875rem;;
-      &:not(:last-child) {
-        border-right: solid 1px;
+    padding-top: 20px;
+    ul {
+      display: inline;
+      margin: 0;
+      li {
+        display: inline;
+        a {
+          color: $orange-color;
+          font-family: gillsans-light;
+          font-size: .875rem;;
+          padding: 25px;
+          &:hover,
+          &:focus {
+            color: $dark-gray-color;
+            text-decoration: none;
+          }
+        }
+        &:not(:last-child) {
+          &::after {
+            content: '|';
+            color: $orange-color;
+            font-size: 0.8rem;
+          }
+        }
+        form {
+          display: inline;
+          padding: 0 15px;
+        }
       }
     }
-    form{
-      display: inline;
-      padding: 0 15px;
-    }
-
   }
 }
 
@@ -33,6 +47,10 @@ body {
   line-height: 1.42857143;
   color: $dark-gray-color;
   background-color: #fff;
+
+  a {
+    cursor: pointer;
+  }
 }
 
 * {
@@ -45,23 +63,34 @@ body {
     margin-bottom: 25px;
   }
 }
+
 nav.main-nav {
   padding-right: 20%;
+  width: 100%;
 }
+
 .allcuban-main-nav {
 
-  nav {
-    a {
-      display: inline-block;
-      width: 20%;
-      color: white;
-      text-transform: uppercase;
-      padding-right: 20%;
-      font-size: 1.125rem;
-    }
-  }
+
   .allcuban-nav {
-    padding: 15px 0
+    padding: 15px 0;
+
+    nav {
+      a {
+        display: inline-block;
+        width: 20%;
+        color: white;
+        text-transform: uppercase;
+        padding-right: 20%;
+        font-size: 1.125rem;
+
+        &:hover,
+        &:focus {
+          color: $orange-color;
+          text-decoration: none;
+        }
+      }
+    }
   }
   .left-nav {
     background: $dark-gray-color;
@@ -73,6 +102,35 @@ nav.main-nav {
     background-color: $light-gray-color;
     float: right;
     width: 35%;
+
+    ul {
+      display: inline;
+      float: right;
+      margin: 0;
+
+      li {
+        display: inline;
+        a {
+          color: white;
+          padding-right: 1rem;
+          font-size: 1.125rem;
+
+          &:hover,
+          &:focus {
+            color: $orange-color;
+            text-decoration: none;
+          }
+        }
+        &:last-child {
+          &::before {
+            content: '|';
+            color: white;
+            padding-right: 1.6rem;
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -81,9 +139,67 @@ nav.main-nav {
   margin-left: 7.7%;
 }
 
-.right-column {
+#form_search {
+  input {
+    height: 1.2rem;
+    background: #aeadb3;
+    border: none;
+    color: $dark-gray-color;
+    font-family: gillsans-light;
+    margin: 0;
+    padding: 0;
+    width: 70px;
+  }
+  a {
+    color: $dark-gray-color;
+  }
+}
+
+#form_newsletter {
   float: left;
-  width: 85%;
+  width: 80%;
+  input {
+    border: none;
+    height: 2rem;
+    width: 100%;
+    color: $dark-gray-color;
+    font-family: gillsans-light;
+    padding: 0 35px 0 15px;
+    position: absolute;
+    left: 0
+  }
+}
+
+#set_locale {
+  background: white;
+  border: none;
+  font-size: .875rem;
+  color: $orange-color;
+  font-family: gillsans-light;
+}
+
+form {
+  display: inline;
+  ::-webkit-input-placeholder {
+    color: $dark-gray-color;
+  }
+  :-moz-placeholder {
+    /* Firefox 18-*/
+    color: $dark-gray-color;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+*/
+    color: $dark-gray-color;
+  }
+  :-ms-input-placeholder {
+    color: $dark-gray-color;
+  }
+}
+
+.right-column {
+  float: right;
+  width: 100%;
+  padding: 0 15px 0 35px;
 }
 
 .nopadding {
@@ -105,6 +221,11 @@ footer {
     margin: 40px 0;
     text-align: left;
     text-transform: capitalize;
+    font-size: 1.75rem;
+
+    &#newsletter_title {
+      margin-bottom: 20px;
+    }
   }
 
   ul {
@@ -117,6 +238,12 @@ footer {
         font-family: gillsans-light;
         line-height: 2rem;
         text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+          color: $dark-gray-color;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -128,9 +255,9 @@ footer {
       li {
         a {
           text-transform: none;
-          i {
-            margin-right: 15px;
-          }
+        }
+        i {
+          margin-right: 15px;
         }
       }
     }
@@ -175,3 +302,31 @@ img {
   max-width: 100%;
 }
 
+.allcuban-chevron-icon {
+  position: absolute;
+  right: 30px;
+  top: 2px;
+  cursor: pointer;
+  color: $light-gray-color;
+  i {
+    &.fa-chevron-right {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+    }
+    &.fa-circle-o {
+      font-size: 1.8rem;
+      position: absolute;
+    }
+  }
+}
+
+.status-area {
+  margin-top: 2.1rem;
+
+  span {
+    margin-left: 35px;
+    font-family: gillsans-light;
+    font-style: italic;
+  }
+}
