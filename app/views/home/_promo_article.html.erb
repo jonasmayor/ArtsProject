@@ -1,0 +1,7 @@
+<% size ||='big' %>
+<article class="promo-product  <%= size %>">
+  <div class=" img">
+    <%= image_tag "#{image}", class: 'img-responsive' %>
+    <%= render partial: 'image_data', locals: {author: 'Sed Eiusmod', title: 'Cillum dolore eu fugia'} %>
+  </div>
+</article>

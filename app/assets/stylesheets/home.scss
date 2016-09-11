@@ -44,24 +44,61 @@ main {
   }
 }
 
-.img {
-  border: solid 1px;
-  overflow: hidden;
-  position: relative;
-
-  &.big {
-    width: 100%;
-    height: 460px;
-  }
-
-  &.small {
-    width: 70%;
-    height: 215px;
-    &:not(:last-child) {
-      margin-bottom: 30px;
+article {
+  &.home-product {
+    figure {
+      position: relative;
+    }
+    .title {
+      font-family: 'gillsans-semibold', serif;
+      text-transform: uppercase;
+      padding: 15px 0 5px;
+    }
+    .price {
+      font-size: 1.125rem;
+      &.before {
+        text-decoration: line-through;
+        color: $orange-color;
+      }
+    }
+    sub {
+      font-family: gillsans-light;
+      text-transform: uppercase;
+      padding-left: 5px;
+    }
+    .action {
+      text-align: center;
+      margin-top: 15px;
+      img {
+        width: 25px;
+      }
     }
   }
+  &.promo-product {
+    .img {
+      border: solid 1px;
+      overflow: hidden;
+      position: relative;
 
+    }
+    &.big {
+      .img {
+        width: 100%;
+        height: 460px;
+      }
+    }
+
+    &.small {
+      .img {
+        width: 70%;
+        height: 215px;
+
+      }
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
   .data {
     position: absolute;
     bottom: 0;
@@ -80,31 +117,5 @@ main {
       font-family: gillsans-semibold;
     }
   }
-}
 
-article {
-  .title {
-    font-family: 'gillsans-semibold', serif;
-    text-transform: uppercase;
-    padding: 15px 0 5px;
-  }
-  .price {
-    font-size: 1.125rem;
-    &.before {
-      text-decoration: line-through;
-      color: $orange-color;
-    }
-  }
-  sub {
-    font-family: gillsans-light;
-    text-transform: uppercase;
-    padding-left: 5px;
-  }
-  .action {
-    text-align: center;
-    margin-top: 15px;
-    img {
-      width: 25px;
-    }
-  }
 }

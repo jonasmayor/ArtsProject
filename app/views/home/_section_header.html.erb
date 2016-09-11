@@ -1,0 +1,20 @@
+<%
+
+
+   selected=@links[link_active_index]
+   if link_active_index!=0
+     @links.push @links[0]
+     @links.delete_at link_active_index
+     @links[0]=selected
+   end
+
+%>
+<header>
+  <ul class="links">
+    <% @links.each do |link| %>
+        <% is_selected=selected[:title]==link[:title] %>
+        <li><a class="<%= is_selected ? 'active' : '' %>" href="<%= link[:href] %>"><%= link[:title] %></a>
+        </li>
+    <% end %>
+  </ul>
+</header>
