@@ -1,0 +1,10 @@
+<article class="home-product">
+  <figure>
+    <%= image_tag "art#{image}.jpg" %>
+    <% if show_data %>
+        <%= render partial: 'image_data' %>
+    <% end %>
+  </figure>
+  <div class="author">Menocall</div>
+  <div class="cant_selled">15 piezas</div>
+</article>
