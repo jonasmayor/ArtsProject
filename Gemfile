@@ -16,6 +16,7 @@ gem 'font-awesome-sass'
 gem 'spree', github: 'spree/spree', branch: '3-1-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-1-stable'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-1-stable'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch:'3-1-stable'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
