@@ -367,3 +367,72 @@ img {
     font-style: italic;
   }
 }
+
+#all_cuban_navbar {
+  .navbar-brand img {
+    width: 70%;
+  }
+  ul {
+    list-style: none;
+  }
+  .navbar-nav > li {
+    &.limit {
+      padding: 15px;
+      div {
+        border-top: solid 1px #e7e7e7;
+      }
+    }
+    a {
+      color: $dark-gray-color;
+      font-family: 'gillsans-semibold';
+      &:hover {
+        color: $orange-color;
+      }
+      &.main {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+#xs-sub-menu {
+  width: 100%;
+  padding: 0 15px;
+  label {
+    font-family: 'gillsans-semibold';
+  }
+  #form_search input {
+    height: 1.2rem;
+    background: white;
+    border: solid 1px gray;
+    color: #5b5b5f;
+    font-family: gillsans-light;
+    margin: 0;
+    padding: 15px;
+    width: 90%;
+    display: inline-block;
+    border-radius: 6px;
+    margin-right: 5px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 25px;
+    text-align: center;
+    padding-top: 25px;
+    border-top: solid 1px #e7e7e7;
+    li {
+
+      display: inline;
+      padding: 15px;
+      font-size: 1.5rem;
+      a {
+        color: $dark-gray-color;
+        &:hover {
+          color: $orange-color;
+        }
+      }
+    }
+  }
+}
+

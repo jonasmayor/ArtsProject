@@ -36,7 +36,7 @@
 </head>
 <body>
 <div class="header-xs visible-xs">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation" id="all_cuban_navbar">
     <div class="navbar-header">
       <div>
         <a class="navbar-brand" href="<%= root_path %>"><%= image_tag('logo1.png') %></a>
@@ -57,31 +57,37 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">Pieces</a>
+        <li><a class="active main" href="#">Home</a></li>
+        <li><a class="main" href="#">Pieces</a></li>
+        <li><a class="main" href="#">Artist</a></li>
+        <li><a class="main" href="#">News&amp;Gallery</a></li>
+        <li class="limit">
+          <div></div>
+        </li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">My Wishlist</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Log in</a></li>
+        <li class="limit">
+          <div></div>
+        </li>
         <li>
-        <li><a href="#">Artist</a>
-        <li>
-        <li><a href="#">News&amp;Gallery</a>
-        <li>
-        <li class="contact_xs"><span>Contact us</span><br/><span class="help">1-888-989-8684</span></li>
-        <li class="actions_xs">
-          <ul>
-            <% if true %>
-                <li><%= link_to t(:my_account), 'spree.account_path' %></li>
+          <div id="xs-sub-menu">
+            <label for="search-xs">Search</label>
 
-                <li><%= link_to t(:logout), 'spree.logout_path' %></li>
+            <form id="form_search">
+              <input type="text" class="search-input" id="search-xs" placeholder="SEARCH"/>
+              <a><i class="fa fa-search"></i></a>
+            </form>
+            <ul>
+              <li><a><i class="fa fa-facebook-f"></i></a></li>
+              <li><a><i class="fa fa-twitter"></i></a></li>
+              <li><a><i class="fa fa-instagram"></i></a></li>
+              <li><a><i class="fa fa-envelope-o"></i></a></li>
+            </ul>
 
-            <% else %>
-                <li id="link-to-login"><%= link_to t(:login), 'spree.login_path' %></li>
-
-                <li id="link-to-login"><%= link_to t(:signup), 'spree.signup_path' %></li>
-
-            <% end %>
-            <li id="currency-select" class="ribbon currency" data-hook>
-              money
-            </li>
-          </ul>
+          </div>
         </li>
       </ul>
     </div>
