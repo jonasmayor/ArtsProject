@@ -1,0 +1,143 @@
+<div id="header">
+  <div class="header-xs visible-xs">
+    <nav class="navbar navbar-default" role="navigation" id="all_cuban_navbar">
+      <div class="navbar-header">
+        <div>
+          <a class="navbar-brand" href="<%= root_path %>"><%= image_tag('logo1.png') %></a>
+        </div>
+        <div class="pull-right">
+          <ul>
+            <li>
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                      data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Desplegar navegación</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li><a class="active main" href="#">Home</a></li>
+          <li><a class="main" href="#">Pieces</a></li>
+          <li><a class="main" href="#">Artist</a></li>
+          <li><a class="main" href="#">News&amp;Gallery</a></li>
+          <li class="limit">
+            <div></div>
+          </li>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">My Wishlist</a></li>
+          <li><a href="#">Checkout</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Log in</a></li>
+          <li>
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i>
+              Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="demo" class="collapse" aria-expanded="false" style="height: 0px;">
+              <li>
+                <a href="#">Dropdown Item</a>
+              </li>
+              <li>
+                <a href="#">Dropdown Item</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+          <li class="limit">
+            <div></div>
+          </li>
+          <li>
+            <div id="xs-sub-menu">
+              <label for="search-xs">Search</label>
+
+              <form id="form_search">
+                <input type="text" class="search-input" id="search-xs" placeholder="SEARCH"/>
+                <a><i class="fa fa-search"></i></a>
+              </form>
+              <ul>
+                <li><a><i class="fa fa-facebook-f"></i></a></li>
+                <li><a><i class="fa fa-twitter"></i></a></li>
+                <li><a><i class="fa fa-instagram"></i></a></li>
+                <li><a><i class="fa fa-envelope-o"></i></a></li>
+              </ul>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="header-xs visible-sm visible-md visible-lg">
+    <div class="allcuban-masthead">
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a class="active" href="#">My Account</a></li>
+            <li><a href="#">My Wishlist</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Log in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="container">
+      <header class="blog-header">
+        <div class="row">
+          <div class="col-sm-6 col-md-6 nopadding">
+            <div class="logo">
+              <%= image_tag 'logo1.png' %>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-5">
+            <div class="status-area">
+              <div><%= t(:welcome) %><span id="user_name">Amarilis Cotilla</span></div>
+              <div id="link-to-cart">
+                <noscript>
+                  <%= link_to Spree.t(:cart), '/cart' %>
+                </noscript>
+                <script>Spree.fetch_cart()</script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="allcuban-main-nav">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="allcuban-nav left-nav">
+            <div class="left-column">
+              <nav class="main-nav">
+                <%= link_to Spree.t(:home), spree.root_path %>
+                <a href="#">Pieces</a>
+                <a href="#">Artist</a>
+                <a href="#">News&amp;Gallery</a>
+              </nav>
+            </div>
+          </div>
+          <div class="allcuban-nav right-nav">
+            <div class="right-column">
+              <form id="form_search">
+                <input type="text" class="search-input" placeholder="SEARCH"/>
+                <a><i class="fa fa-search"></i></a>
+              </form>
+              <ul>
+                <li><a><i class="fa fa-facebook-f"></i></a></li>
+                <li><a><i class="fa fa-twitter"></i></a></li>
+                <li><a><i class="fa fa-instagram"></i></a></li>
+                <li><a><i class="fa fa-envelope-o"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+  </div>
+</div>

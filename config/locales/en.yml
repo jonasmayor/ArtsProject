@@ -21,5 +21,6 @@
 
 en:
   welcome: "Welcome to our shop"
-  footer:
+  spree:
+    newsampgallery: "News&Gallery"
 
