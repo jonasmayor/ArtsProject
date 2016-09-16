@@ -2,7 +2,7 @@
   <div class="header-xs visible-xs">
     <nav class="navbar navbar-default" role="navigation" id="all_cuban_navbar">
       <div class="navbar-header">
-        <div>
+        <div class="col-xs-8">
           <a class="navbar-brand" href="<%= root_path %>"><%= image_tag('logo1.png') %></a>
         </div>
         <div class="pull-right">
@@ -21,28 +21,20 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a class="active main" href="#">Home</a></li>
-          <li><a class="main" href="#">Pieces</a></li>
-          <li><a class="main" href="#">Artist</a></li>
-          <li><a class="main" href="#">News&amp;Gallery</a></li>
+          <%= render :partial => 'spree/shared/basic_navigation' %>
           <li class="limit">
             <div></div>
           </li>
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">My Wishlist</a></li>
-          <li><a href="#">Checkout</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Log in</a></li>
+          <%= render partial: 'spree/shared/secondary_navigation' %>
           <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="collapsed" aria-expanded="false"><i class="fa fa-fw fa-arrows-v"></i>
-              Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="collapsed" aria-expanded="false">
+              <%= Spree.t(:'i18n.language') %><i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse" aria-expanded="false" style="height: 0px;">
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
-              <li>
-                <a href="#">Dropdown Item</a>
-              </li>
+              <% I18n.available_locales.each do |locale| %>
+                  <li>
+                    <a href="<%= set_locale_path(:switch_to_locale => locale) %>"><%= locale %></a>
+                  </li>
+              <% end %>
             </ul>
           </li>
           <li>
@@ -52,18 +44,8 @@
           <li>
             <div id="xs-sub-menu">
               <label for="search-xs">Search</label>
-
-              <form id="form_search">
-                <input type="text" class="search-input" id="search-xs" placeholder="SEARCH"/>
-                <a><i class="fa fa-search"></i></a>
-              </form>
-              <ul>
-                <li><a><i class="fa fa-facebook-f"></i></a></li>
-                <li><a><i class="fa fa-twitter"></i></a></li>
-                <li><a><i class="fa fa-instagram"></i></a></li>
-                <li><a><i class="fa fa-envelope-o"></i></a></li>
-              </ul>
-
+              <%= render :partial => 'spree/shared/search' %>
+              <%= render :partial => 'spree/shared/network_navigation' %>
             </div>
           </li>
         </ul>
@@ -73,15 +55,17 @@
   <div class="header-xs visible-sm visible-md visible-lg">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-md-6 nopadding">
+        <div class="col-sm-4 col-md-5 nopadding">
           <div class="logo">
             <%= link_to image_tag('logo1.png'), spree.root_path %>
           </div>
         </div>
-        <div class="col-sm-5 col-md-6">
+        <div class="col-sm-8 col-md-7">
           <%= render :partial => 'spree/shared/nav_bar' %>
           <div class="status-area">
-            <div><%= t(:welcome) %><span id="user_name">Amarilis Cotilla</span></div>
+            <div><%= t(:welcome) %>
+              <span id="user_name"><%= spree_current_user.nil? ? 'Guest' : link_to(spree_current_user.email, spree.account_path) %></span>
+            </div>
             <div id="link-to-cart">
               <noscript>
                 <%= link_to Spree.t(:cart), '/cart' %>

@@ -1,22 +1,17 @@
 <nav class="col-md-12 nopadding nopadding-r">
   <div id="main-nav-bar" class="navbar">
     <ul class="nav navbar-nav" data-hook>
-      <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
-      <li data-hook><%= link_to Spree.t(:pieces), spree.root_path %></li>
-      <li data-hook><%= link_to Spree.t(:articles), spree.root_path %></li>
-      <li data-hook><%= link_to Spree.t(:newsampgallery), spree.root_path %></li>
+      <%= render :partial => 'spree/shared/basic_navigation' %>
     </ul>
-    <div class="nav navbar-nav navbar-right" data-hook>
+    <div class="nav navbar-nav navbar-right hidden-sm" data-hook>
       <ul>
-        <li>
           <%= render :partial => 'spree/shared/search' %>
-        </li>
       </ul>
+      <%= render :partial => 'spree/shared/network_navigation' %>
+    </div>
+    <div class="nav navbar-nav navbar-right visible-sm" data-hook>
       <ul>
-        <li><a><i class="fa fa-facebook-f"></i></a></li>
-        <li><a><i class="fa fa-twitter"></i></a></li>
-        <li><a><i class="fa fa-instagram"></i></a></li>
-        <li><a><i class="fa fa-envelope-o"></i></a></li>
+        <%= render :partial => 'spree/shared/search' %>
       </ul>
     </div>
   </div>

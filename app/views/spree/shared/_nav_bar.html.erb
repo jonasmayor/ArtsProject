@@ -1,26 +1,7 @@
 <nav class="navbar row " id="top-nav-bar">
-    <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
-      <li><a class="active" href="#">My Account</a></li>
-      <li><a href="#">My Wishlist</a></li>
-      <li><a href="#">Checkout</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Log in</a></li>
-
-        <% if SpreeI18n::Config.available_locales.many? %>
-          <li id="locale-select" data-hook>
-            <%= form_tag spree.set_locale_path, class: 'navbar-form' do %>
-                <div class="form-group">
-                  <label for="switch_to_locale" class="sr-only">
-                    <%= Spree.t(:'i18n.language') %>
-                  </label>
-                  <%= select_tag(:switch_to_locale,
-                                 options_for_select(available_locales_options, I18n.locale),
-                                 class: 'form-control') %>
-                  <noscript><%= submit_tag %></noscript>
-                </div>
-            <% end %>
-          </li>
-      <% end %>
-
+  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+    <%= render partial: 'spree/shared/secondary_navigation' %>
+    <%= render partial: 'spree/shared/locales' %>
   </ul>
 </nav>
+

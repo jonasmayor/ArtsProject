@@ -95,6 +95,9 @@ body {
   a {
     cursor: pointer;
   }
+  ul {
+    list-style: none;
+  }
 }
 
 * {
@@ -105,6 +108,12 @@ body {
   padding-top: 25px;
   img {
     width: 50%;
+    @media(min-width: 768px) {
+      width: 100%;
+    }
+    @media(min-width: 992px) {
+      width: 50%;
+    }
     margin-bottom: 25px;
   }
 }
@@ -139,13 +148,24 @@ nav.main-nav {
     margin: 0;
     background: #aeadb3;
     border-left: solid 5px white;
-    width: 420px;
+    width: 156px;
+    @media(min-width: 992px) {
+      width: 346px;
+    }
+
+    @media(min-width: 1200px) {
+      width: 435px;
+    }
+    @media(min-width: 1366px) {
+      width: 420px;
+    }
     height: 50px;
     ul {
       display: inline;
       margin-bottom: 0;
       height: 50px;
       width: 50%;
+      padding: 0;
       li {
         display: inline;
         a {
@@ -453,19 +473,41 @@ img {
   padding: 0 15px;
   label {
     font-family: 'gillsans-semibold';
+    display: block;
+    margin-bottom: 15px;
   }
-  #form_search input {
-    height: 1.2rem;
-    background: white;
-    border: solid 1px gray;
-    color: #5b5b5f;
-    font-family: gillsans-light;
-    margin: 0;
-    padding: 15px;
-    width: 90%;
-    display: inline-block;
-    border-radius: 6px;
-    margin-right: 5px;
+  #form_search {
+    border: none;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    .form-group {
+      display: inline;
+      float: left;
+      width: 85%;
+
+      input {
+        height: 1.2rem;
+        background: white;
+        border: solid 1px gray;
+        color: #5b5b5f;
+        font-family: gillsans-light;
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+        display: inline-block;
+        border-radius: 6px;
+        margin-right: 5px;
+      }
+    }
+    .search_button {
+      background: transparent;
+      border: none;
+      font-size: 1.3rem;
+      margin-left: 10px;
+      padding: 0;
+    }
+
   }
   ul {
     padding: 0;
@@ -777,4 +819,7 @@ label {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: $orange-color;
+}
+.navbar-brand {
+  height: auto;
 }
