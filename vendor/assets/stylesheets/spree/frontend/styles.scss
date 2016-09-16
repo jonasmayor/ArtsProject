@@ -1,6 +1,10 @@
+// --------------------  VARIABLES -------------------------------------------------
+
 $orange-color: #cc7f46;
 $dark-gray-color: #5b5b5f;
 $light-gray-color: #aeadb3;
+
+// --------------------  FONTS -------------------------------------------------
 
 @font-face {
   font-family: 'gillsans-light';
@@ -37,6 +41,73 @@ $light-gray-color: #aeadb3;
 @font-face {
   font-family: 'gouldyold-italic';
   src: font-url('gouldyold-italic.ttf') format('truetype')
+}
+
+// --------------------  UTILS -------------------------------------------------
+
+.nopadding {
+  padding-left: 0 ! important;
+}
+
+.nopadding-r {
+  padding-right: 0 ! important;
+}
+
+// --------------------  GENERAL STYLES -------------------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+
+  font-size: 16px;
+
+  body {
+
+    font-family: 'gouldyold-bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: $dark-gray-color;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    a {
+
+      cursor: pointer;
+      color: $orange-color;
+      font-family: gillsans-light;
+    }
+    ul {
+
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+    }
+    form {
+      display: inline;
+      ::-webkit-input-placeholder {
+        color: $dark-gray-color;
+        text-transform: uppercase;
+      }
+      :-moz-placeholder {
+        /* Firefox 18-*/
+        color: $dark-gray-color;
+        text-transform: uppercase;
+      }
+      ::-moz-placeholder {
+        /* Firefox 19+*/
+        color: $dark-gray-color;
+        text-transform: uppercase;
+      }
+      :-ms-input-placeholder {
+        color: $dark-gray-color;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
 #top-nav-bar {
@@ -81,29 +152,6 @@ $light-gray-color: #aeadb3;
   }
 }
 
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: 'gouldyold-bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.42857143;
-  color: $dark-gray-color;
-  background-color: #fff;
-
-  a {
-    cursor: pointer;
-  }
-  ul {
-    list-style: none;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .logo {
   padding-top: 25px;
   img {
@@ -116,11 +164,6 @@ body {
     }
     margin-bottom: 25px;
   }
-}
-
-nav.main-nav {
-  padding-right: 20%;
-  width: 100%;
 }
 
 #main-nav-bar {
@@ -196,11 +239,6 @@ nav.main-nav {
   }
 }
 
-.left-column {
-  float: left;
-  margin-left: 7.7%;
-}
-
 #form_search {
   display: inline-block;
   padding-top: 3px;
@@ -227,42 +265,6 @@ nav.main-nav {
   font-size: .875rem;
   color: $orange-color;
   font-family: gillsans-light;
-}
-
-form {
-  display: inline;
-  ::-webkit-input-placeholder {
-    color: $dark-gray-color;
-    text-transform: uppercase;
-  }
-  :-moz-placeholder {
-    /* Firefox 18-*/
-    color: $dark-gray-color;
-    text-transform: uppercase;
-  }
-  ::-moz-placeholder {
-    /* Firefox 19+*/
-    color: $dark-gray-color;
-    text-transform: uppercase;
-  }
-  :-ms-input-placeholder {
-    color: $dark-gray-color;
-    text-transform: uppercase;
-  }
-}
-
-.right-column {
-  float: right;
-  width: 100%;
-  padding: 0 15px 0 35px;
-}
-
-.nopadding {
-  padding-left: 0 ! important;
-}
-
-.nopadding-r {
-  padding-right: 0 ! important;
 }
 
 footer {
@@ -377,7 +379,7 @@ footer {
 
         @media(min-width: 768px) {
           text-align: right;
-          padding-top: 119px;
+          padding-top: 86px;
         }
         @media(min-width: 992px) {
           padding-top: 147px;
@@ -395,21 +397,6 @@ footer {
     }
 
   }
-}
-
-body {
-
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-  a {
-    color: $orange-color;
-    font-family: gillsans-light;
-  }
-}
-
-img {
-  max-width: 100%;
 }
 
 .allcuban-chevron-icon {
@@ -440,6 +427,8 @@ img {
     font-style: italic;
   }
 }
+
+// --------------------  XS  -------------------------------------------------
 
 #all_cuban_navbar {
   .navbar-brand img {
@@ -531,9 +520,12 @@ img {
   }
 }
 
+// --------------------  HOME PAGE -------------------------------------------------
+
 main {
   flex: 1;
   section {
+
     header {
       padding: 5px 0 0 15px;
       @media(min-width: 768px) {
@@ -572,9 +564,6 @@ main {
       }
     }
 
-    &:not(:last-child) {
-      border-bottom: solid 1px $dark-gray-color;
-    }
     .content {
       @media(min-width: 768px) {
         padding-left: 0;
@@ -587,6 +576,122 @@ main {
         }
       }
     }
+
+    article {
+      &.home-product {
+        margin: 25px 0;
+        figure {
+          position: relative;
+        }
+        .title {
+          font-family: 'gillsans-semibold', serif;
+          text-transform: uppercase;
+          padding: 15px 0 5px;
+        }
+        .author {
+          padding-top: 15px;
+          font-size: 1.125rem;
+        }
+        .cant_selled {
+          font-family: 'gillsans-semibold', serif;
+          font-size: .9rem;
+        }
+        .price {
+          font-size: 1.125rem;
+          &.before {
+            text-decoration: line-through;
+            color: $orange-color;
+          }
+        }
+        sub {
+          font-family: gillsans-light;
+          text-transform: uppercase;
+          padding-left: 5px;
+        }
+        .action {
+          text-align: center;
+          margin-top: 15px;
+          img {
+            width: 25px;
+          }
+        }
+      }
+      &.promo-product {
+
+        .img {
+          border: solid 1px;
+          overflow: hidden;
+          position: relative;
+
+        }
+        &.big {
+          .img {
+            width: 100%;
+            @media(min-width: 768px) {
+              height: 460px;
+            }
+          }
+        }
+
+        &.small {
+
+          width: 48%;
+          float: left;
+          margin-top: 25px;
+
+          .picture_title {
+            display: none;
+            @media(min-width: 768px) {
+              display: block;
+            }
+          }
+
+          @media(min-width: 768px) {
+            width: 100%;
+            float: none;
+            margin-top: 0;
+            padding-left: 30px;
+          }
+
+          .img {
+            width: 100%;
+            @media(min-width: 768px) {
+              height: 215px;
+            }
+          }
+          &:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 4%;
+
+            @media(min-width: 768px) {
+              margin-right: 0;
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      .data {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: white;
+        font-family: 'gouldyold-bold', serif;
+        font-weight: bold;
+        padding: 15px;
+        background: linear-gradient(transparent, black);
+        width: 100%;
+        .picture_title {
+          font-size: 1.8rem;
+          line-height: 1;
+        }
+        .picture_author {
+          font-size: 1.2rem;
+          font-family: gillsans-semibold;
+        }
+      }
+
+    }
+
     &.main_section {
       header {
         margin-bottom: 20px;
@@ -594,123 +699,13 @@ main {
       padding-bottom: 40px;
     }
 
+    &:not(:last-child) {
+      border-bottom: solid 1px $dark-gray-color;
+    }
   }
 }
 
-article {
-  &.home-product {
-    margin: 25px 0;
-    figure {
-      position: relative;
-    }
-    .title {
-      font-family: 'gillsans-semibold', serif;
-      text-transform: uppercase;
-      padding: 15px 0 5px;
-    }
-    .author {
-      padding-top: 15px;
-      font-size: 1.125rem;
-    }
-    .cant_selled {
-      font-family: 'gillsans-semibold', serif;
-      font-size: .9rem;
-    }
-    .price {
-      font-size: 1.125rem;
-      &.before {
-        text-decoration: line-through;
-        color: $orange-color;
-      }
-    }
-    sub {
-      font-family: gillsans-light;
-      text-transform: uppercase;
-      padding-left: 5px;
-    }
-    .action {
-      text-align: center;
-      margin-top: 15px;
-      img {
-        width: 25px;
-      }
-    }
-  }
-  &.promo-product {
-
-    .img {
-      border: solid 1px;
-      overflow: hidden;
-      position: relative;
-
-    }
-    &.big {
-      .img {
-        width: 100%;
-        @media(min-width: 768px) {
-          height: 460px;
-        }
-      }
-    }
-
-    &.small {
-
-      width: 48%;
-      float: left;
-      margin-top: 25px;
-
-      .picture_title {
-        display: none;
-        @media(min-width: 768px) {
-          display: block;
-        }
-      }
-
-      @media(min-width: 768px) {
-        width: 100%;
-        float: none;
-        margin-top: 0;
-        padding-left: 30px;
-      }
-
-      .img {
-        width: 100%;
-        @media(min-width: 768px) {
-          height: 215px;
-        }
-      }
-      &:not(:last-child) {
-        margin-bottom: 0;
-        margin-right: 4%;
-
-        @media(min-width: 768px) {
-          margin-right: 0;
-          margin-bottom: 30px;
-        }
-      }
-    }
-  }
-  .data {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: white;
-    font-family: 'gouldyold-bold', serif;
-    font-weight: bold;
-    padding: 15px;
-    background: linear-gradient(transparent, black);
-    width: 100%;
-    .picture_title {
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-    .picture_author {
-      font-size: 1.2rem;
-      font-family: gillsans-semibold;
-    }
-  }
-
-}
+// --------------------  OVERWRITING SPREE STYLES -------------------------------------------------
 
 a.cart-info {
 
@@ -732,6 +727,7 @@ a.cart-info {
   background-position: bottom;
   background-size: 100% 50px;
   margin-bottom: 35px;
+
 }
 
 .navbar {
@@ -820,6 +816,7 @@ label {
   color: #fff;
   background-color: $orange-color;
 }
+
 .navbar-brand {
   height: auto;
 }
