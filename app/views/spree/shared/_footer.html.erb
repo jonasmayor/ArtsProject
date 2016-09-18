@@ -13,7 +13,7 @@
         <li><a>Search Terms</a></li>
         <li><a>Advanced Search</a></li>
         <li><a>Orders and Returns</a></li>
-        <li><a>Contact us</a></li>
+        <li><%= link_to t(:contact_us),  new_contact_path %></li>
       </ul>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
@@ -33,8 +33,14 @@
     <div class="col-xs-12 col-sm-6 col-md-3">
       <h1>My Account</h1>
       <ul>
-        <li><a>Sing in</a></li>
-        <li><a>View cart</a></li>
+        <li>
+          <% if spree_current_user %>
+            <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+          <% else %>
+              <li><%= link_to Spree.t(:login), spree.login_path %></li>
+          <% end %>
+        </li>
+        <li><%= link_to Spree.t(:cart), '/cart' %></li>
         <li><a>My Wishlist</a></li>
         <li><a>Track my Order</a></li>
         <li><a>Help</a></li>
@@ -76,7 +82,7 @@
         <%= image_tag 'logo2.png' %>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 copyright_note">
-        <p><span>All rights reserved 2015</span><i class="fa fa-circle hidden-xs"></i> Designed by arcegraficos.
+        <p><span>All rights reserved <%= Time.now.year%></span><i class="fa fa-circle hidden-xs"></i> Designed by arcegraficos.
           branding</p>
       </div>
     </div>

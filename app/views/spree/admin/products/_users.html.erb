@@ -1,0 +1,7 @@
+<div data-hook="admin_product_form_users">
+  <%= f.field_container :user_id, class: ['form-group'] do %>
+      <%= f.label :user_id, Spree.t(:user) %>
+      <%= f.collection_select(:user_id, Spree::User.all, :id, :fullname, { include_blank: Spree.t('match_choices.none') }, { class: 'select2' }) %>
+      <%= f.error_message_on :user_id %>
+  <% end %>
+</div>

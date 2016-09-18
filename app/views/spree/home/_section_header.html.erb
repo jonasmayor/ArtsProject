@@ -1,7 +1,7 @@
 <header>
   <ul class="links">
     <% @links.each_with_index do |link, index| %>
-        <li><a class="<%= index==0 ? 'active' : 'hidden-xs' %>" href="<%= link[:href] %>"><%= link[:title] %></a>
+        <li><a class="<%= index==0 ? 'active' : 'hidden-xs' %>" href="#<%= link[:href] %>"><%= link[:title] %></a>
         </li>
     <% end %>
   </ul>

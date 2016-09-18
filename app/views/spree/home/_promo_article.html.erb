@@ -1,7 +1,10 @@
-<% size ||='big' %>
-<article class="promo-product  <%= size %>">
+<% product = taxon_collection_products[position]%>
+<article class="promo-product <%=size%>" >
   <div class=" img">
-    <%= image_tag "#{image}", class: 'img-responsive' %>
-    <%= render partial: 'image_data', locals: {author: 'Sed Eiusmod', title: 'Cillum dolore eu fugia'} %>
+    <%= link_to large_image(product,itemprop: "image",  class: 'img-responsive'), product%>
+    <div class="data">
+      <div class="picture_author"><%= product.author %></div>
+      <div class="picture_title"><%=product.name %></div>
+    </div>
   </div>
 </article>

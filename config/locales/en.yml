@@ -24,4 +24,5 @@ en:
   spree:
     newsampgallery: "News&Gallery"
     collections: "Collections"
-
+    pieze: Pieze
+  contact_us: Contact Us

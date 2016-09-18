@@ -1,22 +1,21 @@
 <%
-   show_data||=false
-   show_price_promotion||= false
+  show_data||=false
+  show_price_promotion||= true
 %>
 <article class="home-product">
   <figure>
-    <%= image_tag "art#{image}.jpg" %>
-    <% if show_data %>
-        <%= render partial: 'image_data' %>
-    <% end %>
+    <%= link_to small_image(p, itemprop: "image",  class: 'img-responsive'), p %>
   </figure>
-  <div class="title">La Mona Lisa</div>
-  <div class="price">$50.00<sub class="usd">(usd)</sub></div>
+  <div class="title"><%= p.name %></div>
+  <div class="price" itemprop="price"><%= display_price p%>
+    <sub itemprop="priceCurrency" class="<%=current_currency.downcase%>">
+      <%= current_currency%>
+    </sub>
+  </div>
   <% if show_price_promotion %>
       <div class="price before">$72.00 <sub class="usd">(usd)</sub></div>
   <% end %>
   <div class="action">
-    <a href="#">
-      <%= image_tag 'cart.png' %>
-    </a>
+    <%= render :partial => 'cart_form', locals: {product:p} %>
   </div>
 </article>
