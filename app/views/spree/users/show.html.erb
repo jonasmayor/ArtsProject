@@ -1,0 +1,85 @@
+<h1><%= accurate_title %></h1>
+
+<div data-hook="account_summary" class="account-summary well">
+  <dl id="user-info">
+    <dt>
+      <%= Spree.t(:user) %>
+      <% if spree_current_user == @user  %>
+          (<%= link_to Spree.t(:edit), "admin/users/#{spree_current_user.id}/edit" %>)
+      <% end %>
+    </dt>
+    <dd>
+      <% if @user.bill_address%>
+          <%= Spree.t(:name) %>: <%= @user.bill_address.firstname %> <%= @user.bill_address.lastname %>
+      <%end%>
+    </dd>
+  </dl>
+
+</div>
+
+<div data-hook="account_my_orders" class="account-my-orders">
+
+  <% if !@products%>
+
+  <h3><%= Spree.t(:my_orders) %></h3>
+  <% if @orders.present? %>
+    <table class="table table-striped order-summary">
+      <thead class="active">
+      <tr>
+        <th class="order-number"><%= Spree::Order.human_attribute_name(:number) %></th>
+        <th class="order-date"><%= Spree.t(:date) %></th>
+        <th class="order-status"><%= Spree.t(:status) %></th>
+        <th class="order-payment-state"><%= Spree.t(:payment_state) %></th>
+        <th class="order-shipment-state"><%= Spree.t(:shipment_state) %></th>
+        <th class="order-total"><%= Spree.t(:total) %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td class="order-number"><%= link_to order.number, order_url(order) %></td>
+          <td class="order-date"><%= l order.completed_at.to_date %></td>
+          <td class="order-status"><%= Spree.t("order_state.#{order.state}").titleize %></td>
+          <td class="order-payment-state"><%= Spree.t("payment_states.#{order.payment_state}").titleize if order.payment_state %></td>
+          <td class="order-shipment-state"><%= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state %></td>
+          <td class="lead text-primary order-total"><%= order.display_total %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="alert alert-info"><%= Spree.t(:you_have_no_orders_yet) %></div>
+  <% end %>
+  <br />
+
+  <%else%>
+
+      <div class="content col-xs-12 col-sm-12 col-md-11">
+        <div class="content-row">
+          <div class="row">
+            <% index=1 %>
+            <% @products.each do |p| %>
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                  <article class="home-product">
+                    <figure>
+                      <%= link_to small_image(p, itemprop: "image",  class: 'img-responsive'), p %>
+                    </figure>
+                    <div class="title"><%= p.name %></div>
+                    <div class="price" itemprop="price"><%= display_price p%>
+                      <sub itemprop="priceCurrency" class="<%=current_currency.downcase%>">
+                        <%= current_currency%>
+                      </sub>
+                    </div>
+                    <div class="action">
+                      <%= render :partial => 'spree/home/cart_form', locals: {product:p} %>
+                    </div>
+                  </article>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+  <%end%>
+
+</div>

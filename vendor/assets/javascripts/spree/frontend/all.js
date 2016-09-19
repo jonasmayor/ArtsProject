@@ -10,3 +10,4 @@
 
 //= require_tree .
 //= require spree/frontend/spree_contact_us
+//= require spree/frontend/spree_i18n

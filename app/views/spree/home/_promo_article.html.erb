@@ -3,7 +3,7 @@
   <div class=" img">
     <%= link_to large_image(product,itemprop: "image",  class: 'img-responsive'), product%>
     <div class="data">
-      <div class="picture_author"><%= product.author %></div>
+      <div class="picture_author"><%= link_to product.author, "artist/#{product.user_id}"%></div>
       <div class="picture_title"><%=product.name %></div>
     </div>
   </div>
